@@ -46,42 +46,57 @@ const double pi = acos(-1.0);
 const double eps = 1e-9;
 const int inf = (1 << 28);
 const int MAX = 1000005;
+const int expected_output = 19690720;
 
-int arr[MAX];
+int arr[MAX], current[MAX];
+
+int solver(int i, int noun, int verb) {
+    memcpy(current, arr, sizeof(arr));
+    current[1] = noun;
+    current[2] = verb;
+
+    int j = 0;
+    while(j < i) {
+        if(current[j] == 99) {
+            break;
+        }
+        else if (current[j] == 1) {
+            current[current[j+3]] = current[current[j+1]] + current[current[j+2]];
+        }
+        else if (current[j] == 2) {
+            current[current[j+3]] = current[current[j+1]] * current[current[j+2]];
+        }
+        j += 4;
+    }
+    return current[0];
+}
 
 int main() {
     //freopen("input.txt", "r", stdin);
     //freopen("out.txt", "w", stdout);
 
-    int i, j, k, tmp;
+    int ii, i, j, k, tmp;
     int test, t = 0, kase = 0;
     string line;
 
     getline(cin, line);
     replace(line.begin(), line.end(), ',', ' ');
     stringstream ss(line);
-    i = 0;
+    ii = 0;
 
     while(ss >> tmp) {
-        arr[i] = tmp;
-        i += 1;
+        arr[ii] = tmp;
+        ii += 1;
     }
 
-    arr[1] = 12;
-    arr[2] = 2;
-    j = 0;
-    while(j < i) {
-        if(arr[j] == 99) {
-            break;
+    for(i=0; i<=99; i+=1) {
+        for(j=0; j<=99; j+=1) {
+            if(solver(ii, i, j) == expected_output) {
+                printf("%d%d\n", i, j);
+                exit(0);
+            }
         }
-        else if (arr[j] == 1) {
-            arr[arr[j+3]] = arr[arr[j+1]] + arr[arr[j+2]];
-        }
-        else if (arr[j] == 2) {
-            arr[arr[j+3]] = arr[arr[j+1]] * arr[arr[j+2]];
-        }
-        j += 4;
     }
-    printf("%d\n", arr[0]);
+
     return 0;
 }

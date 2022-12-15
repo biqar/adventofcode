@@ -4,8 +4,15 @@ directory=build
 
 all:
 	mkdir -p $(directory)
-	$(CC) $(CFLAGS) 12/puzzle_1.cpp -o $(directory)/12_puzzle_1
-	$(CC) $(CFLAGS) 12/puzzle_2.cpp -o $(directory)/12_puzzle_2
+	$(CC) $(CFLAGS) 14/puzzle_1.cpp -o $(directory)/14_puzzle_1
+	$(CC) $(CFLAGS) 14/puzzle_2.cpp -o $(directory)/14_puzzle_2
+#	$(CC) $(CFLAGS) 13/puzzle_1.cpp -o $(directory)/13_puzzle_1
+#	$(CC) $(CFLAGS) 12/puzzle_1.cpp -o $(directory)/12_puzzle_1
+#	$(CC) $(CFLAGS) 12/puzzle_2.cpp -o $(directory)/12_puzzle_2
+#	$(CC) $(CFLAGS) 10/puzzle_1.cpp -o $(directory)/10_puzzle_1
+#	$(CC) $(CFLAGS) 10/puzzle_2.cpp -o $(directory)/10_puzzle_2
+#	$(CC) $(CFLAGS) 09/puzzle_1.cpp -o $(directory)/9_puzzle_1
+#	$(CC) $(CFLAGS) 09/puzzle_2.cpp -o $(directory)/9_puzzle_2
 #	$(CC) $(CFLAGS) 08/puzzle_1.cpp -o $(directory)/8_puzzle_1
 #	$(CC) $(CFLAGS) 08/puzzle_2.cpp -o $(directory)/8_puzzle_2
 #	$(CC) $(CFLAGS) 07/puzzle_1.cpp -o $(directory)/7_puzzle_1

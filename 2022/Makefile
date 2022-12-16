@@ -1,11 +1,14 @@
-CC=g++ -std=c++11
+CC=g++ -std=c++17
 CFLAGS=-I. -O3 -w
 directory=build
 
 all:
 	mkdir -p $(directory)
-	$(CC) $(CFLAGS) 14/puzzle_1.cpp -o $(directory)/14_puzzle_1
-	$(CC) $(CFLAGS) 14/puzzle_2.cpp -o $(directory)/14_puzzle_2
+	$(CC) $(CFLAGS) 15/puzzle_1.cpp -o $(directory)/15_puzzle_1
+	$(CC) $(CFLAGS) 15/puzzle_2.cpp -o $(directory)/15_puzzle_2
+	$(CC) $(CFLAGS) 15/puzzle_2_slow.cpp -o $(directory)/15_puzzle_2_slow
+#	$(CC) $(CFLAGS) 14/puzzle_1.cpp -o $(directory)/14_puzzle_1
+#	$(CC) $(CFLAGS) 14/puzzle_2.cpp -o $(directory)/14_puzzle_2
 #	$(CC) $(CFLAGS) 13/puzzle_1.cpp -o $(directory)/13_puzzle_1
 #	$(CC) $(CFLAGS) 12/puzzle_1.cpp -o $(directory)/12_puzzle_1
 #	$(CC) $(CFLAGS) 12/puzzle_2.cpp -o $(directory)/12_puzzle_2
